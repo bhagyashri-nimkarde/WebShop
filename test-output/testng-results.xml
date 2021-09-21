@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="0" passed="0">
+<testng-results skipped="0" failed="0" ignored="1" total="3" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="41330" started-at="2021-09-20T07:39:40Z" finished-at="2021-09-20T07:40:22Z">
+  <suite name="Default suite" duration-ms="48364" started-at="2021-09-21T12:41:30Z" finished-at="2021-09-21T12:42:18Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="41330" started-at="2021-09-20T07:39:40Z" finished-at="2021-09-20T07:40:22Z">
-      <class name="com.cjc.pages.RegisterPage">
-        <test-method status="PASS" signature="getDriver()[pri:0, instance:com.cjc.pages.RegisterPage@77167fb7]" name="getDriver" is-config="true" duration-ms="41321" started-at="2021-09-20T07:39:40Z" finished-at="2021-09-20T07:40:22Z">
+    <test name="Default test" duration-ms="48364" started-at="2021-09-21T12:41:30Z" finished-at="2021-09-21T12:42:18Z">
+      <class name="com.cjc.testCases.RegisterTest">
+        <test-method status="PASS" signature="getDriver()[pri:0, instance:com.cjc.testCases.RegisterTest@63a65a25]" name="getDriver" is-config="true" duration-ms="32051" started-at="2021-09-21T12:41:30Z" finished-at="2021-09-21T12:42:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getDriver -->
-      </class> <!-- com.cjc.pages.RegisterPage -->
+        <test-method status="PASS" signature="RegisterFemaleCustomer()[pri:0, instance:com.cjc.testCases.RegisterTest@63a65a25]" name="RegisterFemaleCustomer" duration-ms="11949" started-at="2021-09-21T12:42:02Z" finished-at="2021-09-21T12:42:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RegisterFemaleCustomer -->
+        <test-method status="PASS" signature="RegisterMaleCustomer()[pri:0, instance:com.cjc.testCases.RegisterTest@63a65a25]" name="RegisterMaleCustomer" duration-ms="4337" started-at="2021-09-21T12:42:14Z" finished-at="2021-09-21T12:42:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RegisterMaleCustomer -->
+      </class> <!-- com.cjc.testCases.RegisterTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
