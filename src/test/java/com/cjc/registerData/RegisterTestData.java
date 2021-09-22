@@ -1,7 +1,5 @@
 package com.cjc.registerData;
 
-import org.openqa.selenium.support.PageFactory;
-
 public class RegisterTestData {
 	
 	public String gender;

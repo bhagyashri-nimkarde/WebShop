@@ -5,8 +5,11 @@
     <classes>
       <class name="com.cjc.testCases.RegisterTest">
         <methods>
+          <include name="emailOfCustomer"/>
           <include name="getDriver"/>
-          <include name="regTest"/>
+          <include name="password"/>
+          <include name="lastnameOfCustomer"/>
+          <include name="closeDriver"/>
         </methods>
       </class> <!-- com.cjc.testCases.RegisterTest -->
     </classes>

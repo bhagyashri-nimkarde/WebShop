@@ -1,30 +1,77 @@
 package com.cjc.testCases;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.cjc.pages.RegisterPage;
-import com.cjc.registerData.RegisterTestData;
+import cjc.driverTest.BaseTest;
 
-import cjc.driver.Driver;
-
-public class RegisterTest extends Driver {
+public class RegisterTest extends BaseTest {
 
 	@Test
 	public void RegisterMaleCustomer() {
-		RegisterTestData RegTdata = new RegisterTestData();
+
 		RegTdata.gender = "male";
 		RegTdata.fname = "Sagar123";
-		RegisterPage Rp = PageFactory.initElements(driver, RegisterPage.class);
+
 		Rp.register(RegTdata);
 	}
 
 	@Test
 	public void RegisterFemaleCustomer() {
-		RegisterTestData RegTdata = new RegisterTestData();
-		RegisterPage Rp = PageFactory.initElements(driver, RegisterPage.class);
 		Rp.register(RegTdata);
 	}
 
+	@DataProvider(name = "FirstNameValidations")
+	public Object[][] FirstNameData() {
+		return new Object[][] { { "sagar nimkarde" }, { "sagarnimkarde111" }, { "" } };
+	}
+
+	@Test(dataProvider = "FirstNameValidations")
+	public void firstnameOfCustomer(String firstName) {
+		RegTdata.fname = firstName;
+		Rp.register(RegTdata);
+	}
+
+	@DataProvider(name = "LastNameValidations")
+	public Object[][] LastNameData() {
+		return new Object[][] { { "sagar nimkarde" }, { "sagarnimkarde111" }, { "" }, { "sagar@1234" } };
+	}
+
+	@Test(dataProvider = "LastNameValidations")
+	public void lastnameOfCustomer(String lastname) {
+
+		RegTdata.lname = lastname;
+		Rp.register(RegTdata);
+	}
+
+	@DataProvider(name = "emailValidation")
+	public Object[][] EmailData() {
+		return new Object[][] { { "bhagyashrinim@gmailcom" }, { "bhagyashrinimgmail.com" } };
+	}
+
+	@Test(dataProvider = "emailValidation")
+	public void emailOfCustomer(String email) {
+
+		RegTdata.email = email;
+		Rp.register(RegTdata);
+	}
+
+	@DataProvider(name = "passwordValidation")
+	public Object[][] passwordData() {
+		return new Object[][] { { "qwerty" }, { "qwerty1234" }, { "Qwerty@#" } };
+	}
+
+	@Test(dataProvider = "passwordValidation")
+	public void password(String password) {
+
+		RegTdata.pwd = password;
+		Rp.register(RegTdata);
+	}
+
+	@Test
+	public void ConfirmPassword() {
+
+		RegTdata.cpd = "sagarNim456";
+		Rp.register(RegTdata);
+	}
 }
