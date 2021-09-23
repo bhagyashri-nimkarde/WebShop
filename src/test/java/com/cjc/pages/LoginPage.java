@@ -5,8 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-import com.cjc.registerData.RegisterTestData;
-
 public class LoginPage {
 	WebDriver driver;
 		@FindBy(how=How.LINK_TEXT, using ="Log in")
@@ -20,6 +18,15 @@ public class LoginPage {
 		
 		@FindBy(how=How.XPATH, using ="//input[@value='Log in']")
 		WebElement LogInButton;
+		
+		@FindBy(how=How.XPATH, using="//span[@for='Email']")
+		public WebElement emailError;
+		
+		@FindBy(how=How.XPATH, using="//div[@class=\"validation-summary-errors\"]/ul/li")
+		public WebElement passwordError;
+		
+		@FindBy(how=How.XPATH, using="//a[@href='/logout']")
+		public WebElement logout;
 		
 	public LoginPage(WebDriver driver)
 	{
