@@ -20,10 +20,10 @@ public class NotebookPage {
 		
 	}
 	
-	public void Go_to_NotebookPage()
+	public void AddNotebookToCart()
 	{
 		AddToCart.click();
-		ShoppingCartLink.click();
+		
 	}
 
 }

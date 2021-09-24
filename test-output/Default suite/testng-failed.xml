@@ -3,15 +3,20 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.cjc.testCases.RegisterTest">
+      <class name="com.cjc.testCases.ShoppingCartTest">
         <methods>
-          <include name="emailOfCustomer"/>
           <include name="getDriver"/>
-          <include name="password"/>
-          <include name="lastnameOfCustomer"/>
+          <include name="shoppingCart_should_be_successfully_checkout"/>
           <include name="closeDriver"/>
         </methods>
-      </class> <!-- com.cjc.testCases.RegisterTest -->
+      </class> <!-- com.cjc.testCases.ShoppingCartTest -->
+      <class name="com.cjc.testCases.LoginTest">
+        <methods>
+          <include name="loginShouldFailInCaseOf_WrongEmailId" invocation-numbers="0 1 2 3"/>
+          <include name="getDriver"/>
+          <include name="closeDriver"/>
+        </methods>
+      </class> <!-- com.cjc.testCases.LoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -19,7 +19,7 @@ public class LoginPage {
 		@FindBy(how=How.XPATH, using ="//input[@value='Log in']")
 		WebElement LogInButton;
 		
-		@FindBy(how=How.XPATH, using="//span[@for='Email']")
+		@FindBy(how=How.XPATH, using="//input[@id='Email']")
 		public WebElement emailError;
 		
 		@FindBy(how=How.XPATH, using="//div[@class=\"validation-summary-errors\"]/ul/li")

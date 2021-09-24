@@ -8,31 +8,35 @@ import org.openqa.selenium.support.How;
 public class ShoppingCartPage {
 	WebDriver driver;
 	
-	@FindBy(how=How.XPATH, using="select[id='CountryId']> option:nth-child(99)")
+	@FindBy(how=How.CSS, using="select[id='CountryId']>option[value='41']")
 	WebElement selectCountry;
 	
-	@FindBy(how=How.XPATH, using="select[name='StateProvinceId']>option[value='0']")
+	@FindBy(how=How.CSS, using="select[name='StateProvinceId']>option[value='0']")
 	WebElement selectState;
 	
-	@FindBy(how=How.XPATH, using="input[id='ZipPostalCode']")
+	@FindBy(how=How.XPATH, using="//input[@id='ZipPostalCode']")
 	WebElement zipcode;
 	
-	@FindBy(how=How.XPATH, using="input[name='estimateshipping']")
+	@FindBy(how=How.CSS, using="input[name='estimateshipping']")
 	WebElement estimateShipping;
 	
-	@FindBy(how=How.XPATH, using="input[name='termsofservice']")
+	@FindBy(how=How.CSS, using="input[name='termsofservice']")
 	WebElement termsofservice;
 	
-	@FindBy(how=How.XPATH, using="button[name='checkout']")
-	WebElement checkoutButton;
+	@FindBy(how=How.CSS, using="button[name='checkout']")
+	public WebElement checkoutButton;
+	
+	@FindBy(how=How.LINK_TEXT,using="Shopping cart")
+	WebElement ShoppingCartLink;
 	
 	public ShoppingCartPage(WebDriver driver)
 	{
 		this.driver=driver;
 	}
 	
-	public void ShoppingCart(String postalcode)
+	public void Checkout(String postalcode)
 	{
+		ShoppingCartLink.click();
 		selectCountry.click();
 		selectState.click();
 		zipcode.sendKeys(postalcode);

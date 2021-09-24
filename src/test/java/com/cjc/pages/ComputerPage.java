@@ -11,7 +11,7 @@ public class ComputerPage {
 	@FindBy(how=How.XPATH, using ="/html/body/div[4]/div[1]/div[2]/ul[1]/li[2]/a")
 	WebElement ComputersLink;
 	
-	@FindBy(how=How.XPATH, using="/html/body/div[4]/div[1]/div[2]/ul[1]/li[2]/ul/li[2]/a")
+	@FindBy(how=How.CSS, using="img[alt='Picture for category Notebooks']")
 	WebElement NotebookLink;
 	
 	public ComputerPage(WebDriver driver)
